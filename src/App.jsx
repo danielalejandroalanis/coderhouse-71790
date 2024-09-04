@@ -49,7 +49,8 @@ const App = () => {
     <React.Fragment>
       {/* <div className={isRed ? "my-class-red" : "my-class-blue"}> */}
       <div>
-        <Container buttonLabel="My button form" />
+        <Container buttonLabel="My button form" label="My label" />
+        <Container buttonLabel="My Button Form 2" />
         {/* <button onClick={() => (isRed = true)}></button> */}
       </div>
     </React.Fragment>

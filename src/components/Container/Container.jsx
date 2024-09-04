@@ -27,11 +27,11 @@ const myStylesSecondary = {
 
 //CSS Modules
 //isSecondary ? styles.secondary : styles.primary
-const Container = ({ buttonLabel }) => {
+const Container = ({ buttonLabel, label }) => {
   return (
     // <div style={isSecondary ? myStylesSecondary : myStylesPrimary}>
     <div className={isSecondary ? styles.secondary : styles.primary}>
-      <span>Div personalizado</span>
+      <span>{label}</span>
     </div>
   );
 };
