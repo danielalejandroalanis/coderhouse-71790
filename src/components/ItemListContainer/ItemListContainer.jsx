@@ -1,3 +1,5 @@
+import ItemCount from "../ItemCount/ItemCount";
+
 const ItemListContainer = ({ greeting }) => {
   return (
     <div
@@ -11,7 +13,8 @@ const ItemListContainer = ({ greeting }) => {
         justifyContent: "center",
       }}
     >
-      {greeting}
+      {/* {greeting} */}
+      <ItemCount />
     </div>
   );
 };
