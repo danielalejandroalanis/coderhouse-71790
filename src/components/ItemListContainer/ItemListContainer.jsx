@@ -10,6 +10,7 @@ import {
 } from "@chakra-ui/react";
 import { BsArrowUpRight } from "react-icons/bs";
 const ItemListContainer = ({ products }) => {
+  //Se coloca un Flex para que se acomoden los cards uno al lado de otro y el atributo wrap obliga a mis cards a amoldarse al contenedor (no hace overflow en x)
   return (
     <Flex wrap={"wrap"}>
       {products.map((item) => {
@@ -39,18 +40,6 @@ const ItemListContainer = ({ products }) => {
                 />
               </Box>
               <Box p={4}>
-                {/* <Box
-                  bg="black"
-                  display={"inline-block"}
-                  px={2}
-                  py={1}
-                  color="white"
-                  mb={2}
-                >
-                  <Text fontSize={"xs"} fontWeight="medium">
-                    React
-                  </Text>
-                </Box> */}
                 <Heading color={"black"} fontSize={"2xl"} noOfLines={1}>
                   {item.name}
                 </Heading>
