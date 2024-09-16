@@ -10,7 +10,6 @@ import {
 } from "@chakra-ui/react";
 import { BsArrowUpRight } from "react-icons/bs";
 const ItemListContainer = ({ products }) => {
-  //Se coloca un Flex para que se acomoden los cards uno al lado de otro y el atributo wrap obliga a mis cards a amoldarse al contenedor (no hace overflow en x)
   return (
     <Flex wrap={"wrap"}>
       {products.map((item) => {
@@ -29,9 +28,7 @@ const ItemListContainer = ({ products }) => {
             >
               <Box h={"200px"} borderBottom={"1px"} borderColor="black">
                 <Img
-                  src={
-                    "https://images.unsplash.com/photo-1542435503-956c469947f6?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80"
-                  }
+                  src={item.thumbnail}
                   roundedTop={"sm"}
                   objectFit="cover"
                   h="full"
@@ -41,11 +38,23 @@ const ItemListContainer = ({ products }) => {
               </Box>
               <Box p={4}>
                 <Heading color={"black"} fontSize={"2xl"} noOfLines={1}>
-                  {item.name}
+                  {item.title}
                 </Heading>
                 <Text color={"gray.500"} noOfLines={2}>
                   {item.description}
                 </Text>
+                <Box
+                  bg="gold"
+                  display={"inline-block"}
+                  px={2}
+                  py={1}
+                  color="white"
+                  mb={2}
+                >
+                  <Text fontSize={"xs"} fontWeight="medium">
+                    ★ {item.rating}
+                  </Text>
+                </Box>
                 <Box
                   bg="black"
                   display={"inline-block"}
