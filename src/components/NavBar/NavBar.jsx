@@ -2,7 +2,6 @@ import {
   Box,
   Flex,
   Avatar,
-  Text,
   Button,
   Menu,
   MenuButton,
@@ -16,9 +15,9 @@ import {
   Center,
 } from "@chakra-ui/react";
 import { MoonIcon, SunIcon } from "@chakra-ui/icons";
-import CartWidget from "../CartWidget/CartWidget";
+import { CartWidget } from "../CartWidget";
 
-const NavBar = () => {
+export const NavBar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
   return (
@@ -73,5 +72,3 @@ const NavBar = () => {
     </>
   );
 };
-
-export default NavBar;
