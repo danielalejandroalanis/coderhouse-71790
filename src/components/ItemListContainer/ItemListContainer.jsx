@@ -9,6 +9,7 @@ import {
   HStack,
 } from "@chakra-ui/react";
 import { BsArrowUpRight } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const Item = ({ item }) => {
   return (
@@ -75,9 +76,11 @@ const Item = ({ item }) => {
             cursor={"pointer"}
             w="full"
           >
-            <Text fontSize={"md"} fontWeight={"semibold"}>
-              View more
-            </Text>
+            <Link to={`/item/${item.id}`}>
+              <Text fontSize={"md"} fontWeight={"semibold"}>
+                View more
+              </Text>
+            </Link>
             <BsArrowUpRight />
           </Flex>
         </HStack>

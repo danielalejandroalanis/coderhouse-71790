@@ -1,11 +1,12 @@
-import { useEffect, useState } from "react";
-import { getAllProducts } from "../services/products.service";
+import React, { useState, useEffect } from "react";
+import { getProductsByCategory } from "../services/products.service";
 
-export const useItems = () => {
+export const useItemsByCategory = (categoryId) => {
   const [productsData, setProductsData] = useState([]);
   const [loading, setLoading] = useState(true);
+
   useEffect(() => {
-    getAllProducts()
+    getProductsByCategory(categoryId)
       .then((res) => {
         setProductsData(res.data.products);
       })
@@ -13,7 +14,6 @@ export const useItems = () => {
         console.log(error);
       })
       .finally(() => setLoading(false));
-  }, []);
-
+  }, [categoryId]);
   return { productsData, loading };
 };

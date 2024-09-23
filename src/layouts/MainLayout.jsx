@@ -1,5 +1,4 @@
 import { Box } from "@chakra-ui/react";
-import { NavBar } from "../components/NavBar";
 
 // Componente contenedor
 // Tenemos el navbar porque es un componente estatico
@@ -8,7 +7,6 @@ import { NavBar } from "../components/NavBar";
 const MainLayout = ({ children }) => {
   return (
     <Box>
-      <NavBar />
       {children}
     </Box>
   );
