@@ -20,3 +20,4 @@ PropTypesClass.propTypes = {
   // customFunction: PropTypes.func,
   // myObj: PropTypes.obj
 };
+  
