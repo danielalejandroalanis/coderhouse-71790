@@ -1,6 +1,14 @@
+import { useContext } from "react";
 import { CiShoppingCart } from "react-icons/ci";
+import { CartContext } from "../../context";
 
 export const CartWidget = () => {
+  const { cartState } = useContext(CartContext);
+
+  console.log(cartState);
+
+  const totalItems = cartState.reduce((acc, item) => acc + item.qtyItem, 0);
+
   return (
     <div
       style={{
@@ -12,7 +20,7 @@ export const CartWidget = () => {
       }}
     >
       <CiShoppingCart size={30} />
-      10
+      {totalItems}
     </div>
   );
 };
