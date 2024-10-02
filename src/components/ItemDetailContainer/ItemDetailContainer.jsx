@@ -19,8 +19,8 @@ import { CartContext } from "../../context";
 export const ItemDetailContainer = ({ item }) => {
   const [count, setCount] = useState(0);
 
-  const { cartState, addItem, removeItem } = useContext(CartContext);
-  
+  const { addItem, removeItem } = useContext(CartContext);
+
   const handleAddItem = () => {
     const newCount = count + 1;
     setCount(newCount);
@@ -81,7 +81,12 @@ export const ItemDetailContainer = ({ item }) => {
               <Text fontSize={"lg"}>{item.description}</Text>
             </VStack>
           </Stack>
-
+          <Flex>
+            <Text>
+              Stock:{" "}
+              {item.stock < 20 ? "Ultimas unidades disponibles" : item.stock}
+            </Text>
+          </Flex>
           <Flex
             justifyContent={"space-between"}
             width={"20%"}

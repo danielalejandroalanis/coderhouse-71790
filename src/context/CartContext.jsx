@@ -24,11 +24,6 @@ export const CartProvider = ({ children }) => {
     }
   };
 
-  //   const arr = [1, 2, 3, 4]
-
-  //   const arr2 = [...arr] // [1, 2, 3, 4] aplana el array. flat
-  // //   const arr2 = [arr] // [[1, 2, 3, 4]]
-
   const removeItem = (product) => {
     const existingProduct = cartState.find((item) => item.id === product.id);
 
