@@ -17,3 +17,4 @@ export async function getProductsByCategory(categoryId) {
     `https://dummyjson.com/products/category/${categoryId}`
   );
 }
+  
