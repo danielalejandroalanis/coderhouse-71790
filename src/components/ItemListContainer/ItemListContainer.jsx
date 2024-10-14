@@ -90,7 +90,6 @@ const Item = ({ item }) => {
 };
 
 export const ItemListContainer = ({ products }) => {
-  const categories = products.map((product) => console.log(product.category))
   return (
     <Flex wrap={"wrap"}>
       {products.map((item) => {

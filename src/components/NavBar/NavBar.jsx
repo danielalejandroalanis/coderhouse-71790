@@ -19,7 +19,7 @@ import { CartWidget } from "../CartWidget";
 import { useItems } from "../../hooks";
 import { Link } from "react-router-dom";
 
-import { createProductsFirestore } from "../../helpers";
+// import { createProductsFirestore } from "../../helpers";
 
 export const NavBar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
@@ -31,7 +31,9 @@ export const NavBar = () => {
     <>
       <Box bg={useColorModeValue("gray.100", "gray.900")} px={4}>
         <Flex h={16} alignItems={"center"} justifyContent={"space-between"}>
-          <Box>Logo</Box>
+          <Link to="/">
+            <Box>Logo</Box>
+          </Link>
           <Menu>
             <MenuButton as={Button} cursor="pointer" style={{ marginLeft: 30 }}>
               Categorias
@@ -45,13 +47,13 @@ export const NavBar = () => {
             </MenuList>
           </Menu>
           {/* Boton para agregar productos */}
-          <Button
+          {/* <Button
             onClick={() => {
               createProductsFirestore("products");
             }}
           >
             Crear products
-          </Button>
+          </Button> */}
           <Flex alignItems={"center"}>
             <CartWidget />
             <Stack direction={"row"} spacing={7}>
