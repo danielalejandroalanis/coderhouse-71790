@@ -16,22 +16,7 @@ import { useContext, useState } from "react";
 import { MdLocalShipping } from "react-icons/md";
 import { CartContext } from "../../context";
 
-export const ItemDetailContainer = ({ item }) => {
-  const [count, setCount] = useState(0);
-
-  const { addItem, removeItem } = useContext(CartContext);
-
-  const handleAddItem = () => {
-    const newCount = count + 1;
-    setCount(newCount);
-    addItem(item, newCount);
-  };
-
-  const handleRemoveItem = () => {
-    setCount(count - 1);
-    removeItem(item);
-  };
-
+const ItemDetail = ({item, handleAddItem, handleRemoveItem, count, setCount}) => {
   return (
     <Container maxW={"7xl"}>
       <SimpleGrid
@@ -104,5 +89,31 @@ export const ItemDetailContainer = ({ item }) => {
         </Stack>
       </SimpleGrid>
     </Container>
+  );
+};
+export const ItemDetailContainer = ({ item }) => {
+  const [count, setCount] = useState(0);
+
+  const { addItem, removeItem } = useContext(CartContext);
+
+  const handleAddItem = () => {
+    const newCount = count + 1;
+    setCount(newCount);
+    addItem(item, newCount);
+  };
+
+  const handleRemoveItem = () => {
+    setCount(count - 1);
+    removeItem(item);
+  };
+
+  return (
+    <ItemDetail
+      item={item}
+      handleAddItem={handleAddItem}
+      handleRemoveItem={handleRemoveItem}
+      count={count}
+      setCount={setCount}
+    />
   );
 };

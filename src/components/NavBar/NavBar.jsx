@@ -8,7 +8,6 @@ import {
   MenuList,
   MenuItem,
   MenuDivider,
-  useDisclosure,
   useColorModeValue,
   Stack,
   useColorMode,
@@ -19,11 +18,8 @@ import { CartWidget } from "../CartWidget";
 import { useItems } from "../../hooks";
 import { Link } from "react-router-dom";
 
-// import { createProductsFirestore } from "../../helpers";
-
 export const NavBar = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const { isOpen, onOpen, onClose } = useDisclosure();
 
   const { itemsData } = useItems("categories");
 
@@ -46,14 +42,6 @@ export const NavBar = () => {
               ))}
             </MenuList>
           </Menu>
-          {/* Boton para agregar productos */}
-          {/* <Button
-            onClick={() => {
-              createProductsFirestore("products");
-            }}
-          >
-            Crear products
-          </Button> */}
           <Flex alignItems={"center"}>
             <CartWidget />
             <Stack direction={"row"} spacing={7}>

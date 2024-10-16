@@ -18,7 +18,6 @@ import {
 import { MinusIcon, AddIcon, DeleteIcon } from "@chakra-ui/icons";
 import { useNavigate } from "react-router";
 
-//Lazy Loading => Carga perezosa
 export const Checkout = () => {
   const { cartState, addItem, removeItem, deleteItem } =
     useContext(CartContext);
@@ -41,7 +40,7 @@ export const Checkout = () => {
   return (
     <Box p={6} maxW="800px" mx="auto" h={"90vh"}>
       <Heading as="h2" size="lg" mb={6} textAlign="center">
-        Detalles del Carrito
+        Detalle del Carrito
       </Heading>
 
       {cartState.length === 0 ? (

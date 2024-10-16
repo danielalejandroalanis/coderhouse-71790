@@ -2,9 +2,6 @@ import { useState, useEffect } from "react";
 import { db } from "../firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 
-//Query => consula => SQL => Base de Datos
-// SELECT * FROM loquesea WHERE numero = 1 (base de datos relacional)
-
 export const useItemsByCategory = (categoryId) => {
   const [productsData, setProductsData] = useState([]);
   const [loading, setLoading] = useState(true);
